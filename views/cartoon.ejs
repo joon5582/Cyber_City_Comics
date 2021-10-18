@@ -1,0 +1,49 @@
+<div class="header-container">
+    <div class="header-box">
+
+        <div class="cartoon-title">
+            <h4>
+                <%=cartoon.title%>
+            </h4>
+        </div>
+
+        <div class="sub">
+            <p class="view">View : <%=view%></p>
+            <p class="date">Created date : <%=(cartoon.month+'/'+cartoon.day+'/'+cartoon.year)%></p>
+        </div>
+    </div>
+</div>       
+
+        
+
+<div class="bg">
+    <div class="bg_con">
+        <section class="cartoon-buttons">
+            <button type="button" class="button gofirstbtn" onclick="window.location.href='/1'">|<</button>
+            <% if ( cartoon.num==1) { %>
+                <button type="button" class="button prbtn" onclick="window.location.href='/1'">Prev</button>
+            <%} else { %>
+                <button type="button" class="button prbtn" onclick="window.location.href='/<%=(cartoon.num-1)%>'">Prev</button>
+            <%}%> 
+                <button type="button" class="button rdbtn" onclick="window.location.href='/random'">Random</button>
+            <% if ( cartoon.num==maxnum) { %>
+                <button type="button" class="button nxbtn" onclick="window.location.href='/'">Next</button>
+            <%} else { %>
+                <button type="button" class="button nxbtn" onclick="window.location.href='/<%=(cartoon.num+1)%>'">Next</button>  
+            <%}%>  
+                <button type="button" class="button golastbtn" onclick="window.location.href='/'">>|</button>
+        </section>
+    
+        <section class="img-box">
+            <img class="img" src=<%=cartoon.img%> title='<%=cartoon.alt%>' alt='<%=cartoon.title%>' >
+        </section>
+    </div>
+</div>
+
+    
+<div class="text-container">
+    <section class="transcript_box">
+        <p class="transcript"><%-cartoon.transcript%></p>
+    </section>
+</div>
+  
